@@ -69,7 +69,6 @@ jobs:
         #       ./termux-app/app/build/outputs/apk/debug/termux-app-universal_${{remote_version}}.apk
         #       .termux-app/app/build/outputs/apk/debug/output-metadata.json
 #
-jobs:
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
