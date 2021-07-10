@@ -61,12 +61,26 @@ jobs:
           pwd
           ls
           
-      - name: Store generated universal APK file
-        uses: actions/upload-artifact@v2
-        with:
-          name: termux-app-universal
-          path: |
-              ./termux-app/app/build/outputs/apk/debug/termux-app-universal_${{remote_version}}.apk
-              .termux-app/app/build/outputs/apk/debug/output-metadata.json
-          
-      
+#       - name: Store generated universal APK file
+        # uses: actions/upload-artifact@v2
+        # with:
+        #   name: termux-app-universal
+        #   path: |
+        #       ./termux-app/app/build/outputs/apk/debug/termux-app-universal_${{remote_version}}.apk
+        #       .termux-app/app/build/outputs/apk/debug/output-metadata.json
+#
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+    steps:
+    - id: step1
+      run: echo "::set-output name=test::hello-world"
+   
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+    - run: echo ${{needs.job1.outputs.output1}}      
