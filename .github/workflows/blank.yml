@@ -66,7 +66,7 @@ jobs:
         with:
           name: termux-app-universal
           path: |
-              ./termux-app/app/build/outputs/apk/debug/termux-app-universal_0.117.apk
+              ./termux-app/app/build/outputs/apk/debug/termux-app-universal_${remote_version}.apk
               .termux-app/app/build/outputs/apk/debug/output-metadata.json
           
       
