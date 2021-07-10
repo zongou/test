@@ -57,6 +57,8 @@ jobs:
             fi
           done
           echo result of rename
+          echo current dir is
+          pwd
           ls
           
       - name: Store generated universal APK file
