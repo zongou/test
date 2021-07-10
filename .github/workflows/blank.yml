@@ -27,6 +27,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      id: step1
+        run: |
+          remote_version=$(cat termux-app/app/build.gradle |grep "versionName \"" |awk -F "\"" '{print $2}')
+          echo "::set-output name=remote_version::$remote_version"
+
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
@@ -62,11 +68,6 @@ jobs:
           echo current dir is
           pwd
           ls
-      id: step1
-        run: |
-          remote_version=$(cat termux-app/app/build.gradle |grep "versionName \"" |awk -F "\"" '{print $2}')
-          echo "::set-output name=remote_version::$remote_version"
-
       - name: Store generated universal APK file
         uses: actions/upload-artifact@v2
         with:
