@@ -69,13 +69,13 @@ jobs:
           echo current dir is
           pwd
           ls
-      - name: Store generated universal APK file
-        uses: actions/upload-artifact@v2
-        with:
-          name: termux-app-universal
-          path: |
-              # ./termux-app/app/build/outputs/apk/debug/termux-app-universal_${{remote_version}}.apk
-              .termux-app/app/build/outputs/apk/debug/output-metadata.json
+#       - name: Store generated universal APK file
+        # uses: actions/upload-artifact@v2
+        # with:
+        #   name: termux-app-universal
+        #   path: |
+        #       ./termux-app/app/build/outputs/apk/debug/termux-app-universal_${{remote_version}}.apk
+#               .termux-app/app/build/outputs/apk/debug/output-metadata.json
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
