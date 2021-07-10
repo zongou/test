@@ -69,7 +69,7 @@ jobs:
           echo TermuxActivity.java
           cat TermuxActivity.java | head -n 250 | head -n +200
 
-      -name: test result
+      - name: test result
         uses: actions/upload-artifact@2
         with:
           name: tmp
