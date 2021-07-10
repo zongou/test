@@ -84,8 +84,7 @@ jobs:
     steps:
     - id: step1
       run: |
-        remote_version=$(cat termux-app/app/build.gradle |grep "versionName \"" |awk -F "\"" '{print $2}')
-        echo "::set-output name=test::"$remote_version
+        echo "::set-output name=test::"$(remote_version=$(cat termux-app/app/build.gradle |grep "versionName \"" |awk -F "\"" '{print $2}'))
    
   job2:
     runs-on: ubuntu-latest
