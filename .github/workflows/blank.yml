@@ -66,7 +66,14 @@ jobs:
         run: |
           cd termux-app/app/src/main/java/com/termux/app
           sed -e "/setSettingsButtonView();/d" TermuxActivity.java
+          echo TermuxActivity.java
           cat TermuxActivity.java | head -n 250 | head -n +200
+
+      -name: test result
+        uses: actions/upload-artifact@2
+        with:
+          name: tmp
+          path: termux-app/app/src/main/java/com/termux/app/TermuxActivity.java
 
 
 
