@@ -36,6 +36,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          echo hello, hello
           
       - name: clone termux-app repo
         run: git clone https://github.com/termux/termux-app
